@@ -8,8 +8,7 @@
 </head>
 <body>
 
-    <h1>Principal</h1>
-    <a href="{{ route('contact') }}">Contactame</a>
+    <h1> {{ 'Usuario => '.$user->name}} </h1>
 
 </body>
 </html>

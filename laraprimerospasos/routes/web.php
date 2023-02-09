@@ -21,3 +21,9 @@ Route::get('/custom', function () {
     $data = ['msj' => 'Mensaje desde el servidor', 'state' => 'OK'];
     return view('Custom.custom', $data);
 });
+
+Route::get('/contactame', function () {
+    return view('Contact.contact');
+})->name('contact');
+
+Route::get('/testing', [App\Http\Controllers\TestController::class, 'testing'])->name('testing');

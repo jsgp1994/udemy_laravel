@@ -8,8 +8,7 @@
 </head>
 <body>
 
-    <h1>Principal</h1>
-    <a href="{{ route('contact') }}">Contactame</a>
+    <h1>Contactame</h1>
 
 </body>
 </html>
