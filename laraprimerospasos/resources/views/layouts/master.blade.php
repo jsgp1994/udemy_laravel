@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-
-    <h1> {{ 'Usuario => '.$user->name}} </h1>
+    <h1>Dashboard</h1>
+    @yield("content")
 
 </body>
 </html>

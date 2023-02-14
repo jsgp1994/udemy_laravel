@@ -10,6 +10,10 @@ class TestController extends Controller
     public function testing ()
     {
         $user = User::find(3);
-        return view("Testing.testing",[ "user" => $user ]);
+        $html = "<h1>Esto es una prueba</h1>";
+        $edad = 28;
+        $nombres = ["Juan", "Esteban"];
+        $array = [];
+        return view("Test.test",compact( "user", "html", "edad" , "nombres" , "array"));
     }
 }
