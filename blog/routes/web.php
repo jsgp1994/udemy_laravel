@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 
 Route::resource('post', App\Http\Controllers\Dashboard\PostController::class);
+Route::resource('category', App\Http\Controllers\Dashboard\CategoryController::class);
