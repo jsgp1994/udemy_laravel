@@ -3,7 +3,7 @@
 <input type="text" name="title" value="{{old("title",$post->title)}}" placeholder="Titulo">
 
 <label for="">Slug</label>
-<input readonly type="text" name="slug" value="{{old("slug",$post->slug)}}">
+<input type="text" name="slug" value="{{old("slug",$post->slug)}}">
 
 <label for="">Conetido</label>
 <textarea name="content" cols="10" rows="10">{{old("content",$post->content)}}</textarea>
@@ -25,5 +25,11 @@
     <option {{ old("posted",$post->posted) == "not" ? "selected" : "" }} value="not">No</option>
     <option {{ old("posted",$post->posted) == "yes" ? "selected" : "" }} value="yes">Si</option>
 </select>
+
+@if ( isset($task) && $task == "edit")
+    <label for="">Imagen</label>
+    <input type="file" name="image" id="">
+@endif
+
 
 <button type="submit">Enviar</button>

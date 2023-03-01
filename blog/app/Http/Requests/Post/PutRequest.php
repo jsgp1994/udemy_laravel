@@ -16,16 +16,6 @@ class PutRequest extends FormRequest
         return true;
     }
 
-    static public function myRules()
-    {
-        return [
-            'title' => 'required|min:5|max:500',
-            'content'=> 'required|min:7',
-            'category_id'=> 'required|integer',
-            'description'=> 'required|min:7',
-            'posted'=> 'required'
-        ];
-    }
 
     /**
      * Get the validation rules that apply to the request.
@@ -34,6 +24,14 @@ class PutRequest extends FormRequest
      */
     public function rules()
     {
-        return $this->myRules();
+        return [
+            'title' => 'required|min:5|max:500',
+            'content'=> 'required|min:7',
+            'slug'=> 'required|min:5|max:500|unique:posts,slug,'.$this->route("post")->id,
+            'category_id'=> 'required|integer',
+            'description'=> 'required|min:7',
+            'posted'=> 'required',
+            'image' => 'mimes:jpeg,jpg,png|max:10240'
+        ];
     }
 }

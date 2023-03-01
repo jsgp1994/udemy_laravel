@@ -44,7 +44,7 @@ class PostController extends Controller
     public function store(StoreRequest $request)
     {
         Post::create($request->all());
-        return to_route("post.index");
+        return to_route("post.index")->with('status', "Post {$request->title} fue creado de manera exitosa");
     }
 
     /**
@@ -79,8 +79,15 @@ class PostController extends Controller
      */
     public function update(PutRequest $request, Post $post)
     {
-        $post->update($request->validated());
-        return to_route("post.index");
+        $data = $request->validated();
+
+        if(isset($data['image'])){
+            $data['image'] = $fileName = time().".".$data['image']->extension();
+            $request->image->move(public_path("image"), $fileName);
+        }
+
+        $post->update($data);
+        return to_route("post.index")->with('status', "Post {$post->title} fue modificado de manera exitosa");
     }
 
     /**
@@ -92,6 +99,6 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        return to_route("post.index");
+        return to_route("post.index")->with('status', "Post {$post->title} fue eliminado de manera exitosa");
     }
 }
