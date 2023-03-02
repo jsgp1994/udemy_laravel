@@ -4,7 +4,7 @@
 
     <a href="{{ route("post.create") }}">Crear</a>
 
-    <table>
+    <table class="table">
         <thead>
             <th>Titulo</th>
             <th>Categoria</th>
@@ -26,7 +26,6 @@
                             <button type="submit">Eliminar</button>
                         </form>
                     </td>
-
                 </tr>
             @endforeach
         </tbody>

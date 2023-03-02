@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**************************Tabla Basica********************************/
+
+.table {
+    @apply table-auto w-full
+}
+
+.table th {
+    @apply px-6 py-2 bg-gray-50 font-medium text-gray-500 uppercase border leading-5 tracking-widest
+}
+
+.table tr {
+    @apply border
+}
+
+.table td {
+    @apply px-6 py-4 whitespace-normal
+}
+
+/**************************form********************************/
+.form-control {
+    @apply block rounded-sm shadow-sm bg-purple-50 w-full
+}
+
+/**************************Container********************************/
