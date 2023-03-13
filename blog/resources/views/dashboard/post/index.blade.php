@@ -2,14 +2,14 @@
 
 @section('content')
 
-    <a href="{{ route("post.create") }}">Crear</a>
+    <a class="btn btn-success my-2" href="{{ route("post.create") }}">Crear</a>
 
-    <table class="table">
+    <table class="table mb-3">
         <thead>
             <th>Titulo</th>
             <th>Categoria</th>
             <th>Posteado</th>
-            <th>Acciones</th>
+            <th colspan="3">Acciones</th>
         </thead>
         <tbody>
             @foreach ($posts as $p)
@@ -17,13 +17,13 @@
                     <td>{{ $p->title }}</td>
                     <td> {{ $p->category->title }} </td>
                     <td>{{ $p->posted }}</td>
-                    <td><a href="{{ route("post.edit", $p) }}">Modificar</a></td>
-                    <td><a href="{{ route("post.show",$p) }}">Ver</a></td>
+                    <td><a class="btn btn-success" href="{{ route("post.edit", $p) }}">Modificar</a></td>
+                    <td><a class="btn btn-primary" href="{{ route("post.show",$p) }}">Ver</a></td>
                     <td>
                         <form action="{{ route("post.destroy", $p) }}" method="post">
                             @csrf
                             @method("DELETE")
-                            <button type="submit">Eliminar</button>
+                            <button class="btn btn-danger" type="submit">Eliminar</button>
                         </form>
                     </td>
                 </tr>

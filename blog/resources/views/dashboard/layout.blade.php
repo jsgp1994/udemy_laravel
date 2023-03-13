@@ -31,7 +31,9 @@
         @endif
 
         <div class="container">
-            @yield('content')
+            <div class="card card-white">
+                @yield('content')
+            </div>
         </div>
     </div>
 </body>

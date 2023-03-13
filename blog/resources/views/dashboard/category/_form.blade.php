@@ -6,4 +6,4 @@
 <p>slug</p>
 <input class="form-control" type="text" name="slug" id="" value="{{old("slug",$category->slug)}}">
 
-<button type="submit">Enviar</button>
+<button class="btn btn-success my-2" type="submit">Enviar</button>

@@ -32,4 +32,4 @@
 @endif
 
 
-<button type="submit">Enviar</button>
+<button class="btn btn-success my-2" type="submit">Enviar</button>
